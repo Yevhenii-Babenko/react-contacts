@@ -1,22 +1,22 @@
 import React from 'react'
 
-function Contract(props) {
-    return(
+export default function Contract(props) {
+    console.log(props)
+    const { firstName, lastName, phone, gender } = props.properties;
+    return (
         <div>
-            <p> 
-                {props.firstName}
+            <p>
+            {firstName}
             </p>
-            <p> 
-                {props.lastName}
+            <p>
+                {lastName}
             </p>
-            <p> 
-                {props.phone}
+            <p>
+                {phone}
             </p>
-            <p> 
-                {props.gender} 
+            <p>
+                {gender}
             </p>
         </div>
     )
 }
-
-export default Contract

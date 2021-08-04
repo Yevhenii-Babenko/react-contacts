@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Contract from "./Contract";
 
 class Contracts extends Component {
-    /* constructor(props){
+    constructor(props){
         super(props);
         this.state = {
             contacts: [{
@@ -36,8 +36,8 @@ class Contracts extends Component {
                 gender: "male"
             }]
         }
-    } */
-    state = {
+    }
+    /* state = {
         contacts: [{
             firstName: "Барней",
             lastName: "Стинсовський",
@@ -69,28 +69,22 @@ class Contracts extends Component {
             gender: "male"
         }
         ]
-    }
+    } */
 
     render() {
         return (
             <div>
                 <h1> Hello from Contacts</h1>
-                <Contract />
-                {/* <p> FirstName is: {this.state.contacts[1].firstName} </p> */}
+                <form>
+                    <input type="text" />
+                    <button type="submit">Пошук</button>
+                </form>
                 <div>
-                    {this.state.contacts.map((contact, index) => <Contract contacts={contact} key={index} />)}
+                    {this.state.contacts.map((contact, index) => <Contract properties={contact} key={index} />)}
                 </div>
             </div>
         )
     }
 }
-
-export function Clock() {
-    return(
-        <Contracts />
-    )
-}
-
-setInterval(Clock, 1000)
 
 export default Contracts
