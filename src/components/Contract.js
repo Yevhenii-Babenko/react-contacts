@@ -1,40 +1,22 @@
 import React from 'react'
-/* import { useState } from 'react'; */
+import AppleIcon from '@material-ui/icons/Apple';
+import AndroidIcon from '@material-ui/icons/Android';
+import '../components/contact.css'
 
-
-export function SeachItem (props) {
-    /* [searchItem, setSearchItem] = useState(""); */
-
-    return(
-        <form>
-            {/* <input type="text" placeholder="Search..."  onChange={(event) => {setSearchItem(event.target.value)}} /> */}
-            <button type="submit" >Пошук</button>
-        </form>
-    )
-}
-
-function Contract(props) {
-    
-   /*  const { firstName, lastName, phone, gender } = props.ourProp; */
-   /*  const list = [firstName, lastName, phone, gender]; */
+function Contract({ name, surname, phone, gender }) {
     return (
         <React.Fragment>
-            {/* <SeachItem /> */}
-            <div>
-            <p>{props.name}</p>
-            <p>{props.surname}</p>
-            <p>{props.phone}</p>
-            <p>{props.gender}</p>
-                {/* {list.map((item, index) => <p key={index}>{item}</p>)} */}
-                {/* <h3>
-                {`${firstName} ${lastName}`}
-                </h3>
+            <div className="contacts__blocks">
                 <p>
-                    {phone}
+                    <strong> {name} </strong>
                 </p>
                 <p>
-                    {gender}
-                </p> */}
+                    <strong> {surname} </strong>
+                </p>
+                <p> {phone} </p>
+                { gender === undefined ? <p> 
+                        <i className="contacts__item">gender is not defind</i>
+                    </p> : <p> { gender === "male" ? <AndroidIcon /> : <AppleIcon /> }</p> }
             </div>
         </React.Fragment>
     )
