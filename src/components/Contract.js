@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+/* import { useState } from 'react'; */
 
 
 export function SeachItem (props) {
@@ -15,13 +15,17 @@ export function SeachItem (props) {
 
 function Contract(props) {
     
-    const { firstName, lastName, phone, gender } = props.properties;
-    const list = [firstName, lastName, phone, gender];
+   /*  const { firstName, lastName, phone, gender } = props.ourProp; */
+   /*  const list = [firstName, lastName, phone, gender]; */
     return (
         <React.Fragment>
             {/* <SeachItem /> */}
             <div>
-                {list.map((item, index) => <p key={index}>{item}</p>)}
+            <p>{props.name}</p>
+            <p>{props.surname}</p>
+            <p>{props.phone}</p>
+            <p>{props.gender}</p>
+                {/* {list.map((item, index) => <p key={index}>{item}</p>)} */}
                 {/* <h3>
                 {`${firstName} ${lastName}`}
                 </h3>

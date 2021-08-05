@@ -1,8 +1,8 @@
 import React from 'react'
-import { useState } from 'react';
+/* import { useState } from 'react'; */
 
 export default function Filter() {
-    const [searchItem, setSearchItem] = useState("");
+    /* const [searchItem, setSearchItem] = useState("");
     const  contacts = [{
         firstName: "Барней",
         lastName: "Стинсовський",
@@ -32,15 +32,15 @@ export default function Filter() {
         lastName: "Мотсбес",
         phone: "+380956319521",
         gender: "male"
-    }];
+    }]; */
 
     return(
         <React.Fragment>
-            <h2> Filter </h2>
+            {/* <h2> Filter </h2>
             <div>
                 {contacts
                 .filter((value) => {
-                    if (searchItem == "") {
+                    if (searchItem === "") {
                         return value
                     } else if (value.firstName.toLocaleLowerCase().includes(searchItem.toLocaleLowerCase())) {
                         return value
@@ -50,7 +50,7 @@ export default function Filter() {
             <form>
                 <input type="text" placeholder="Search..."  onChange={(event) => {setSearchItem(event.target.value)}} />
                 <button type="submit" >Пошук</button>
-            </form>
+            </form> */}
         </React.Fragment>
         
     )

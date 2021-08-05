@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Contract, { SeachItem } from "./Contract";
-import Filter from "./Filter"
+import Contract from "./Contract";
+/* import Filter from "./Filter" */
 
 class Contracts extends Component {
     constructor(props){
@@ -41,13 +41,29 @@ class Contracts extends Component {
     }
     
     render() {
+        const contactsObj = this.state.contacts;
+        const searchState = this.state.search;
+        
+        const fillteredContracts = contactsObj.filter((value) => {
+            return searchState === "" ? value : value.firstName.toLocaleLowerCase().includes(searchState.toLocaleLowerCase())
+            || value.lastName.toLocaleLowerCase().includes(searchState.toLocaleLowerCase())
+            || value.phone.toLocaleLowerCase().includes(searchState.toLocaleLowerCase())
+        })
         return (
             <div>
                 <h1> Hello from Contacts</h1>
+                <input type="text" onChange={(event) => {
+                    this.setState({
+                        search: event.target.value
+                    })
+                }} />
                 <div>
-                    {this.state.contacts.map((contact, index) => <Contract properties={contact} key={index} />)}
+                    {this.state.search}
+                    {fillteredContracts.map((item, index) => <Contract key={index} name={item.firstName} surname={item.lastName} phone={item.phone} gender={item.gender} />)}
                 </div>
-                <Filter />
+                {/* <div>
+                    {this.state.contacts.map((contact, index) => <Contract properties={contact} key={index} />)}
+                </div> */}
             </div>
         )
     }
